@@ -6,10 +6,10 @@ PORT='8545'
 
 w3 = Web3(Web3.HTTPProvider('http://' + IP_ADDR + ':' + PORT))
 
-if w3.isConnected():
-    print( "Connected to Ethereum node" )
-else:
-    print( "Failed to connect to Ethereum node!" )
+# if w3.isConnected():
+#     print( "Connected to Ethereum node" )
+# else:
+#     print( "Failed to connect to Ethereum node!" )
 
 def getTransaction(tx):
     tx = w3.eth.getTransaction(tx)
