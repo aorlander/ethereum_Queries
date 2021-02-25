@@ -31,7 +31,7 @@ def getGas(tx):
     return gas
 
 def getTransactionCost(tx):
-    txCost = 1 #YOUR CODE HERE
+    txCost = getGas(tx)*getGasPrice(tx)
     return txCost
 
 def getBlockCost(blockNum):
