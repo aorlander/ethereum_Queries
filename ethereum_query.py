@@ -54,8 +54,7 @@ def getMostExpensiveTransaction(blockNum):
     block = w3.eth.getBlock(blockNum)
     transactions = block.transactions
     for tx in transactions:
-      if getTransactionCost(tx) > maxTx:
-          maxTx = getTransactionCost(tx)
-    maxTxH = HexBytes(maxTx)  
-    return maxTxH
+      if HexBytes(getTransactionCost(tx)) > HexBytes(maxTx):
+          maxTx = tx
+    return HexBytes(maxTx)
 
