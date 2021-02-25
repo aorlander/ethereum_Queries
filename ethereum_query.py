@@ -57,4 +57,3 @@ def getMostExpensiveTransaction(blockNum):
       if HexBytes(getTransactionCost(tx)) > HexBytes(maxTx):
           maxTx = tx
     return HexBytes(maxTx)
-
