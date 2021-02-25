@@ -12,6 +12,7 @@ w3 = Web3(Web3.HTTPProvider('http://' + IP_ADDR + ':' + PORT))
 #    print( "Failed to connect to Ethereum node!" )
 
 def getTransaction(tx):
+    c = HexBytes(tx)
     block = w3.eth.getTransaction(tx) 
     return block
 
@@ -20,9 +21,13 @@ def getGasPrice(tx):
     gasPrice = 0
     return gasPrice
 
+  # Next, complete the function getGas that takes a transaction and returns the amount of gas used by the transaction.
+  # Note: The amount of gas used by a transaction is different from the maximum amount of gas that the transaction 
+  # sender was willing to spend. You will need to use w3.eth.getTransactionReceipt(tx) to obtain the 
+  # data structure that has the right field.
 def getGas(tx):
-    block = w3.eth.getTransactionByBlock(tx) 
-    gas = block.gas
+    block = w3.eth.getTransactionReceipt(tx)
+    gas = block.gasUsed
     print(gas)
     return gas
 
