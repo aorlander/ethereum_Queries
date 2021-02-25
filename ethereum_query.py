@@ -18,7 +18,7 @@ def getTransaction(tx):
 
 def getGasPrice(tx):
     block = w3.eth.getTransaction(tx) 
-    gasPrice = 0
+    gasPrice = block.gas
     return gasPrice
 
   # Next, complete the function getGas that takes a transaction and returns the amount of gas used by the transaction.
