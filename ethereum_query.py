@@ -40,9 +40,3 @@ def getMostExpensiveTransaction(blockNum):
     maxTx = HexBytes('0xf7f4905225c0fde293e2fd3476e97a9c878649dd96eb02c86b86be5b92d826b6')  #YOUR CODE HERE
     return maxTx
 
-
-tx = '0xa1cb58ac3d7457994feecb5680088d2aa26dc0ac1af54560a2d131925713a820'  
-block = w3.eth.getTransaction(tx) 
-print(block.blockNumber)
-getGasPrice(tx)
-getGas(tx)
