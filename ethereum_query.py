@@ -6,24 +6,25 @@ PORT='8545'
 
 w3 = Web3(Web3.HTTPProvider('http://' + IP_ADDR + ':' + PORT))
 
-if w3.isConnected():
-    print( "Connected to Ethereum node" )
-else:
-    print( "Failed to connect to Ethereum node!" )
+# if w3.isConnected():
+#    print( "Connected to Ethereum node" )
+# else:
+#    print( "Failed to connect to Ethereum node!" )
 
 def getTransaction(tx):
-    block = w3.eth.getBlock(tx)
-    block.number = block.number
-    return tx
+    block = w3.eth.getTransaction(tx) 
+    return block
 
 def getGasPrice(tx):
-    block = w3.eth.getBlock(tx)
+    block = w3.eth.getTransaction(tx) 
     gasPrice = block.gasPrice
     print(gasPrice)
     return gasPrice
 
 def getGas(tx):
-    gas = 1 #YOUR CODE HERE
+    block = w3.eth.getTransaction(tx) 
+    gas = block.gas
+    print(gas)
     return gas
 
 def getTransactionCost(tx):
@@ -40,5 +41,8 @@ def getMostExpensiveTransaction(blockNum):
     return maxTx
 
 
-
-
+tx = '0xa1cb58ac3d7457994feecb5680088d2aa26dc0ac1af54560a2d131925713a820'  
+block = w3.eth.getTransaction(tx) 
+print(block.blockNumber)
+getGasPrice(tx)
+getGas(tx)
